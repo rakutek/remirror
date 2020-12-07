@@ -5,6 +5,13 @@
   "repository": "git@github.com:mp3/remirror-playground.git",
   "author": "mp3 <im.in.a.coma.xxx@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "eslint $PWD\"/**/*.{js,ts,jsx,tsx}\"",
+    "format": "eslint --fix $PWD\"/**/*.{js,ts,jsx,tsx}\""
+  },
   "dependencies": {
     "next": "^10.0.3",
     "react": "^17.0.1",
