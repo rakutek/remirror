@@ -1,27 +1,9 @@
 import React from 'react'
 import { BoldExtension } from 'remirror/extension/bold'
-import { RemirrorProvider, useManager, useRemirror } from 'remirror/react'
+import { RemirrorProvider, useManager } from 'remirror/react'
 
-const Button = () => {
-  const { active, commands } = useRemirror({ autoUpdate: true })
+import Editor from './editor'
 
-  return (
-    <>
-      <button
-        onClick={() => commands.toggleBold()}
-        style={{ fontWeight: active.bold() ? 'bold' : undefined }}
-      >
-        Bold
-      </button>
-    </>
-  )
-}
-
-const Editor = () => {
-  const { getRootProps } = useRemirror()
-
-  return <div {...getRootProps()} />
-}
 
 const EditorWrapper = () => {
   const manager = useManager(() => [new BoldExtension()])
@@ -29,7 +11,7 @@ const EditorWrapper = () => {
   return (
     <RemirrorProvider manager={manager}>
       <Editor />
-      <Button />
+
     </RemirrorProvider>
   )
 }
